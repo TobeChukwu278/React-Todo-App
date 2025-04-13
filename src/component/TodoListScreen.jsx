@@ -59,7 +59,7 @@ function TodoListScreen() {
         justifyContent: 'space-between',
         [`@media (min-width: 768px)`]: {
             flexDirection: 'row',
-            width: '100%'
+            width: '100%',
         },
     };
 
@@ -70,7 +70,7 @@ function TodoListScreen() {
             flex: '0 0 100%',
             marginBottom: 0,
             paddingRight: '20px',
-            height: '100vh',
+            height: '90vh',
         },
     };
 
