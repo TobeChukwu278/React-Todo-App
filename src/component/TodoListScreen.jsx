@@ -56,10 +56,16 @@ function TodoListScreen() {
         backgroundColor: '#2c3e50',
         color: '#fff',
         padding: '20px',
+        // paddingRight: '20%',
         justifyContent: 'space-between',
         [`@media (min-width: 768px)`]: {
             flexDirection: 'row',
             width: '100%',
+            // width: '110%',
+            height: '100vh',
+            backgroundColor: '#2c3e50',
+            color: '#fff',
+            padding: '10px',
         },
     };
 
