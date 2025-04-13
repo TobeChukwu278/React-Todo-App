@@ -52,7 +52,7 @@ function TodoListScreen() {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        height: '90vh',
+        height: '100%',
         backgroundColor: '#2c3e50',
         color: '#fff',
         // padding: '20px',
@@ -68,10 +68,11 @@ function TodoListScreen() {
         flexGrow: 1,
         marginBottom: '20px',
         [`@media (min-width: 768px)`]: {
-            flex: '0 0 100%',
+            // flex: 1,
+            width: '100%',
             marginBottom: 0,
-            paddingRight: '20px',
-            height: '90vh',
+            // paddingRight: '20px',
+            height: '100%',
         },
     };
 
