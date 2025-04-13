@@ -3,7 +3,7 @@ import TodoListScreen from './component/TodoListScreen';
 
 function App() {
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <TodoListScreen />
     </div>
   );
