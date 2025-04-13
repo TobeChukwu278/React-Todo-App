@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TodoItem from './TodoItem';
+import TodoItem from './TodayItem';
 
 function TodaySection({ todos, onAddTodo, onToggleTodo }) {
     const [newTodoText, setNewTodoText] = useState('');
@@ -18,7 +18,7 @@ function TodaySection({ todos, onAddTodo, onToggleTodo }) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <input
                     type="text"
                     value={newTodoText}
@@ -37,7 +37,8 @@ function TodaySection({ todos, onAddTodo, onToggleTodo }) {
 }
 
 const todoListContainerStyle = {
-    maxHeight: '300px', // Adjust this value as needed
+    height: '133px',
+    maxHeight: '200px', // Adjust this value as needed
     overflowY: 'auto', // Enable vertical scrolling
     marginTop: '10px', // Add some spacing
 };
