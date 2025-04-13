@@ -3,11 +3,13 @@ import TodaySection from './TodaySection';
 import PastActivitySection from './PastActivitySection';
 import BottomNavigation from './BottomNavigation';
 import AddTaskModal from './AddTaskModal';
+import { useMediaQuery } from 'react-responsive';
 
 function TodoListScreen() {
     const [todos, setTodos] = useState([]);
     const [pastActivities, setPastActivities] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const isLargeScreen = useMediaQuery({ minWidth: 768 });
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -51,30 +53,34 @@ function TodoListScreen() {
     const screenContainerStyle = {
         display: 'flex',
         flexDirection: 'column',
-        width: '100%',
+        width: '97%',
         height: '100%',
         backgroundColor: '#2c3e50',
         color: '#fff',
         padding: '20px',
         justifyContent: 'space-between',
-        [`@media (min-width: 768px)`]: {
+        ...(isLargeScreen && {
+            width: '97%',
+            display: 'flex',
             flexDirection: 'row',
-            width: '100%',
-            alignItems: 'stretch',
-        },
+            marginBottom: 0,
+            paddingRight: '20px',
+            height: '100%',
+        }),
     };
 
     const mainContentStyle = {
         flexGrow: 1,
-        [`@media (min-width: 768px)`]: {
+        ...(isLargeScreen && {
             width: '100%',
             display: 'flex',
-            flexDirection: 'row',
-            // flex: '1 0 0', // Take up remaining space
+            flexDirection: 'column',
+            flex: '1 0 0', // Take up remaining space
             marginBottom: 0,
-            paddingRight: '20px',
+            paddingLeft: '30%',
             height: '100%',
-        },
+            overflow: 'hidden',
+        }),
     };
 
     return (

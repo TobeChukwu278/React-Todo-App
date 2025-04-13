@@ -2,24 +2,54 @@ import React from 'react';
 import { FaHome, FaHeart } from 'react-icons/fa';
 import { AiOutlinePlusCircle, AiOutlineBell } from 'react-icons/ai';
 import { FiUser } from 'react-icons/fi';
+import { useMediaQuery } from 'react-responsive';
+import styles from '../App.module.css';
+
 
 function BottomNavigation({ onAddButtonClick }) {
+    const isLargeScreen = useMediaQuery({ minWidth: 768 });
+
+    const bottomNavStyle = {
+        backgroundColor: '#34495e',
+        borderRadius: '8px',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        padding: '15px',
+        order: 2,
+        ...(isLargeScreen && {
+            flexDirection: 'column',
+            width: '20%',
+            height: '100%',
+            justifyContent: 'flex-start',
+            alignItems: 'stretch',
+            marginBottom: 0,
+            paddingRight: 0,
+            order: 0,
+            position: 'fixed',
+            transition: 'background-color 0.3s ease',
+            '&:hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            },
+        }),
+    };
+
     return (
         <nav style={bottomNavStyle}>
-            <button style={iconButtonStyle} aria-label="Home">
-                <FaHome />
+            <button className={styles.iconButton} aria-label="Home"> {/* Use className */}
+                {isLargeScreen ? 'Home' : <FaHome />}
             </button>
-            <button style={iconButtonStyle} aria-label="Favorites">
-                <FaHeart />
+            <button className={styles.iconButton} aria-label="Favorites">
+                {isLargeScreen ? 'Favorites' : <FaHeart />}
             </button>
             <button style={addButtonButtonStyle} onClick={onAddButtonClick} aria-label="Add Task">
-                <AiOutlinePlusCircle />
+                {isLargeScreen ? 'Add Task' : <AiOutlinePlusCircle />}
             </button>
-            <button style={iconButtonStyle} aria-label="Notifications">
-                <AiOutlineBell />
+            <button className={styles.iconButton} aria-label="Notifications">
+                {isLargeScreen ? 'Notifications' : <AiOutlineBell />}
             </button>
-            <button style={iconButtonStyle} aria-label="User Profile">
-                <FiUser />
+            <button className={styles.iconButton} aria-label="User Profile">
+                {isLargeScreen ? 'Profile' : <FiUser />}
             </button>
         </nav>
     );
@@ -43,20 +73,6 @@ const addButtonButtonStyle = {
     fontSize: '30px',
 };
 
-const bottomNavStyle = {
-    backgroundColor: '#34495e',
-    borderRadius: '8px',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    padding: '15px',
-    [`@media (min-width: 768px)`]: {
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        width: '20%', // Adjust width as needed (e.g., 20% or a fixed px value)
-        maxWidth: '200px',
-        padding: '20px',
-    },
-};
+
 
 export default BottomNavigation;

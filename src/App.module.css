@@ -1,0 +1,22 @@
+/* BottomNavigation.module.css */
+.iconButton {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.iconButton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.addButton {
+    font-size: 30px;
+}
