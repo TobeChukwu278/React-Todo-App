@@ -60,17 +60,19 @@ function TodoListScreen() {
         [`@media (min-width: 768px)`]: {
             flexDirection: 'row',
             width: '100%',
+            alignItems: 'stretch',
         },
     };
 
     const mainContentStyle = {
         flexGrow: 1,
-        // marginBottom: '20px',
         [`@media (min-width: 768px)`]: {
-            // flex: 1,
             width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            // flex: '1 0 0', // Take up remaining space
             marginBottom: 0,
-            // paddingRight: '20px',
+            paddingRight: '20px',
             height: '100%',
         },
     };

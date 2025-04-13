@@ -53,8 +53,8 @@ const bottomNavStyle = {
     [`@media (min-width: 768px)`]: {
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        width: '40%', // Takes 40% of the width
-        maxWidth: '200px', // Optional: set a maximum width
+        width: '20%', // Adjust width as needed (e.g., 20% or a fixed px value)
+        maxWidth: '200px',
         padding: '20px',
     },
 };
