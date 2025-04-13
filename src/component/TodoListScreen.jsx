@@ -62,7 +62,7 @@ function TodoListScreen() {
             flexDirection: 'row',
             width: '100%',
             // width: '110%',
-            height: '100vh',
+            height: '90vh',
             backgroundColor: '#2c3e50',
             color: '#fff',
             padding: '10px',
