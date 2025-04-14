@@ -20,13 +20,15 @@ function BottomNavigation({ onAddButtonClick }) {
         ...(isLargeScreen && {
             flexDirection: 'column',
             width: '20%',
-            height: '100%',
+            height: 'auto',
             justifyContent: 'flex-start',
+            alignSelf: 'center',
             alignItems: 'stretch',
             marginBottom: 0,
-            paddingRight: 0,
+            paddingRight: '10px',
             order: 0,
             position: 'fixed',
+            top: '15%',
             transition: 'background-color 0.3s ease',
             '&:hover': {
                 backgroundColor: 'rgba(0, 0, 0, 0.2)',
